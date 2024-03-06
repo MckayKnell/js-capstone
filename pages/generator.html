@@ -1,0 +1,40 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/generator.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+  <div class="page-container">
+    <div class="sidebar-wrapper">
+      <div class="title-wrapper">
+        <div class="user-wrapper">
+          <div class="sidebar-title">Students</div>
+        </div>
+      </div>
+      <ul class="students-wrapper"></ul>
+    </div>
+
+      <button class="icon-close" onclick="buttonSelector()">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    <div class="main-wrapper">
+      <div class="title">Random Student Generator</div>
+      <div class="student-display"></div>
+        <div class="submit-button">
+          <button onclick="studentGenerator()">Generate</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+  <script src="../scripts/generator.js"></script>
+</html>
