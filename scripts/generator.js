@@ -1,38 +1,23 @@
 function generateData() {
-  let studentlist = [];
   fetch("https://fe-students.onrender.com/api/users")
-    .then((res) => {
-      return res.json();
-    })
+    .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       for (let student of data.results) {
-        let studenttag = document.createElement("li");
-        studenttag.id = student.id;
-        studenttag.append(student.name);
-        studentlist.push(student.name);
-        studentsWrapper.append(studenttag);
+        let studentTag = document.createElement("li");
+        studentTag.id = student.id;
+        studentTag.innerText = student.name;
+        studentsWrapper.append(studentTag);
       }
-      console.log(studentlist.length);
-      console.log(randomData(studentlist));
     })
 
-    .catch((error) => {
-      console.error(error);
-    });
+    .catch((error) => console.error(error));
 }
-
-const studentsWrapper = document.querySelector(".students-wrapper");
-
-generateData();
 
 function buttonSelector() {
   const sidebar = document.querySelector(".sidebar-wrapper");
-  if (sidebar.style.display != "block") {
-    sidebar.style.display = "block";
-  } else {
-    sidebar.style.display = "none";
-  }
+  sidebar.style.display != "none"
+    ? (sidebar.style.display = "none")
+    : (sidebar.style.display = "block");
 }
 
 function studentGenerator() {
@@ -41,5 +26,9 @@ function studentGenerator() {
 
   studentDiv.innerText = "";
   const student = Math.floor(Math.random() * students.length);
-  studentDiv.append(students[student].innerText);
+  studentDiv.innerText = students[student].innerText;
 }
+
+const studentsWrapper = document.querySelector(".students-wrapper");
+
+generateData();
